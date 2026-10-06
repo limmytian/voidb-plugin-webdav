@@ -1,0 +1,40 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "depth": {
+      "default": "0",
+      "enum": [
+        "0",
+        "infinity"
+      ],
+      "type": "string"
+    },
+    "destination": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "if_match": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "if_none_match": {
+      "default": false,
+      "type": "boolean"
+    },
+    "overwrite": {
+      "default": false,
+      "type": "boolean"
+    },
+    "source": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "source",
+    "destination"
+  ],
+  "type": "object"
+}

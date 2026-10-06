@@ -1,0 +1,56 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "entry": {
+      "additionalProperties": false,
+      "properties": {
+        "content_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "entry_type": {
+          "enum": [
+            "file",
+            "directory"
+          ],
+          "type": "string"
+        },
+        "etag": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "href": {
+          "type": "string"
+        },
+        "last_modified": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "size": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "name",
+        "href",
+        "entry_type",
+        "size"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "entry"
+  ],
+  "type": "object"
+}

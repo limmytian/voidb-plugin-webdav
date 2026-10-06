@@ -1,0 +1,31 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "byte_limit": {
+      "maximum": 1048576,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "bytes_returned": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "content_base64": {
+      "type": "string"
+    },
+    "content_truncated": {
+      "type": "boolean"
+    },
+    "path": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "path",
+    "content_base64",
+    "bytes_returned",
+    "content_truncated",
+    "byte_limit"
+  ],
+  "type": "object"
+}

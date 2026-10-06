@@ -1,0 +1,79 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "chunk_bytes": {
+      "maximum": 16777216,
+      "minimum": 65536,
+      "type": "integer"
+    },
+    "depth": {
+      "default": "0",
+      "enum": [
+        "0",
+        "infinity"
+      ],
+      "type": "string"
+    },
+    "destination": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "expected_sha256": {
+      "description": "Optional whole-resource SHA-256 required before local commit or reported success.",
+      "pattern": "^[A-Fa-f0-9]{64}$",
+      "type": "string"
+    },
+    "if_match": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "if_none_match": {
+      "default": false,
+      "type": "boolean"
+    },
+    "local_path": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "local_root": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "lock_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "operation": {
+      "enum": [
+        "upload",
+        "download",
+        "copy",
+        "move"
+      ],
+      "type": "string"
+    },
+    "overwrite": {
+      "default": false,
+      "type": "boolean"
+    },
+    "path": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "resume_token": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "operation",
+    "path"
+  ],
+  "type": "object"
+}

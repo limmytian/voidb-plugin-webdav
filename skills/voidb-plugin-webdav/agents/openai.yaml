@@ -1,0 +1,4 @@
+interface:
+  display_name: "VoidB WebDAV Plugin"
+  short_description: "Guide for VoidB WebDAV storage"
+  default_prompt: "Use $voidb-plugin-webdav to update the VoidB WebDAV plugin, storage capabilities, CLI, or sync operations."

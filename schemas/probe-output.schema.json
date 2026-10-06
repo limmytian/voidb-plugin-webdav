@@ -1,0 +1,42 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "accepts_byte_ranges": {
+      "type": "boolean"
+    },
+    "allowed_methods": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "dav_classes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "supports_copy": {
+      "type": "boolean"
+    },
+    "supports_locks": {
+      "type": "boolean"
+    },
+    "supports_move": {
+      "type": "boolean"
+    },
+    "supports_partial_upload": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "dav_classes",
+    "allowed_methods",
+    "accepts_byte_ranges",
+    "supports_copy",
+    "supports_move",
+    "supports_locks",
+    "supports_partial_upload"
+  ],
+  "type": "object"
+}

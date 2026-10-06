@@ -1,0 +1,10 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "path": {
+      "default": "/",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

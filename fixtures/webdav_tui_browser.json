@@ -1,0 +1,50 @@
+{
+  "profile_label": "fixture-webdav",
+  "server_label": "Fixture WebDAV",
+  "auth_method": "Basic",
+  "root": "voidb-fixture-root",
+  "path": "/remote.php/dav/files/alice/projects/",
+  "roots": [
+    "voidb-fixture-root"
+  ],
+  "entries": [
+    {
+      "href": "/remote.php/dav/files/alice/projects/reports/",
+      "name": "reports",
+      "entry_type": "directory",
+      "size": 0,
+      "last_modified": "2026-07-07T07:20:00Z",
+      "content_type": null,
+      "etag": "fixture-reports-dir"
+    },
+    {
+      "href": "/remote.php/dav/files/alice/projects/report.csv",
+      "name": "report.csv",
+      "entry_type": "file",
+      "size": 4096,
+      "last_modified": "2026-07-07T07:25:00Z",
+      "content_type": "text/csv",
+      "etag": "fixture-report-etag"
+    },
+    {
+      "href": "/remote.php/dav/files/alice/projects/delete-me.txt",
+      "name": "delete-me.txt",
+      "entry_type": "file",
+      "size": 64,
+      "last_modified": "2026-07-07T07:26:00Z",
+      "content_type": "text/plain",
+      "etag": "fixture-delete-etag"
+    },
+    {
+      "href": "/remote.php/dav/files/alice/projects/locked-contract.pdf",
+      "name": "locked-contract.pdf",
+      "entry_type": "file",
+      "size": 1048576,
+      "last_modified": "2026-07-07T07:30:00Z",
+      "content_type": "application/pdf",
+      "etag": "fixture-locked-etag"
+    }
+  ],
+  "status": "fixture webdav browser ready",
+  "permission_error": "webdav.forbidden redacted fixture permission failure"
+}

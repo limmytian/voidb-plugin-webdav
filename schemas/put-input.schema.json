@@ -1,0 +1,41 @@
+{
+  "additionalProperties": false,
+  "oneOf": [
+    {
+      "not": {
+        "required": [
+          "content_text"
+        ]
+      },
+      "required": [
+        "content_base64"
+      ]
+    },
+    {
+      "not": {
+        "required": [
+          "content_base64"
+        ]
+      },
+      "required": [
+        "content_text"
+      ]
+    }
+  ],
+  "properties": {
+    "content_base64": {
+      "type": "string"
+    },
+    "content_text": {
+      "type": "string"
+    },
+    "path": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "path"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,41 @@
+[package]
+name = "voidb-plugin-webdav"
+version = "0.3.0"
+edition = "2024"
+license = "Apache-2.0"
+authors = ["limmytian <limmytian@gmail.com>"]
+description = "Standalone VoidB process plugin for WebDAV file and storage services"
+repository = "https://github.com/limmytian/voidb-plugin-webdav"
+
+[[bin]]
+name = "voidb-plugin-webdav"
+path = "src/main.rs"
+
+[dependencies]
+voidb-process-plugin-sdk = { path = "../voidb/crates/voidb-process-plugin-sdk" }
+voidb-core = { path = "../voidb/crates/voidb-core" }
+reqwest_dav = "0.3"
+async-trait = "0.1"
+anyhow = "1.0"
+clap = { version = "4.5", features = ["derive"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.43", features = ["full"] }
+tracing = "0.1"
+chrono = { version = "0.4", features = ["serde"] }
+base64 = "0.22"
+sha2 = "0.10"
+hex = "0.4"
+ratatui = "0.29"
+crossterm = "0.28"
+
+[dev-dependencies]
+uuid = { version = "1.13", features = ["v4"] }
+
+[[example]]
+name = "fixture_smoke"
+path = "examples/fixture_smoke.rs"
+
+[[example]]
+name = "webdav_transfer_reliability"
+path = "examples/webdav_transfer_reliability.rs"

@@ -1,0 +1,90 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "cursor": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "entries": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "content_type": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "entry_type": {
+            "enum": [
+              "file",
+              "directory"
+            ],
+            "type": "string"
+          },
+          "etag": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "href": {
+            "type": "string"
+          },
+          "last_modified": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "size": {
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "name",
+          "href",
+          "entry_type",
+          "size"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "entry_count": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "limit": {
+      "maximum": 500,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "next_cursor": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "path": {
+      "type": "string"
+    },
+    "truncated": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "path",
+    "entries",
+    "entry_count",
+    "limit",
+    "truncated"
+  ],
+  "type": "object"
+}

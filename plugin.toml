@@ -1,0 +1,163 @@
+id = "webdav"
+name = "WebDAV Plugin"
+version = "0.3.0"
+protocol_version = "1"
+description = "WebDAV remote storage and file management plugin for VoidB."
+license = "Apache-2.0"
+homepage = "https://github.com/limmytian/voidb-plugin-webdav"
+
+[runtime]
+command = "voidb-plugin-webdav"
+args = ["serve"]
+transport = "stdio-jsonrpc"
+
+[connections]
+profile_schema = "schemas/profile.schema.json"
+secret_classes = ["password"]
+
+[[capabilities]]
+id = "probe"
+description = "Probe WebDAV COPY, MOVE, locking, and range-resume support without mutation."
+input_schema = "schemas/probe-input.schema.json"
+output_schema = "schemas/probe-output.schema.json"
+permissions = ["connection.read", "webdav.probe"]
+risk = "read_only"
+destructive = false
+streaming = false
+connection_required = true
+required_secret_classes = []
+supports_dry_run = false
+default_timeout_ms = 30000
+
+[[capabilities]]
+id = "list"
+description = "List entries in a WebDAV directory."
+input_schema = "schemas/list-input.schema.json"
+output_schema = "schemas/list-output.schema.json"
+permissions = ["connection.read", "webdav.list"]
+risk = "read_only"
+destructive = false
+streaming = false
+connection_required = true
+required_secret_classes = []
+supports_dry_run = false
+default_timeout_ms = 30000
+
+[[capabilities]]
+id = "stat"
+description = "Read metadata for one WebDAV item."
+input_schema = "schemas/stat-input.schema.json"
+output_schema = "schemas/stat-output.schema.json"
+permissions = ["connection.read", "webdav.stat"]
+risk = "read_only"
+destructive = false
+streaming = false
+connection_required = true
+required_secret_classes = []
+supports_dry_run = false
+default_timeout_ms = 30000
+
+[[capabilities]]
+id = "get"
+description = "Fetch one WebDAV file as bounded base64 content."
+input_schema = "schemas/get-input.schema.json"
+output_schema = "schemas/get-output.schema.json"
+permissions = ["connection.read", "webdav.get"]
+risk = "read_only"
+destructive = false
+streaming = false
+connection_required = true
+required_secret_classes = []
+supports_dry_run = false
+default_timeout_ms = 30000
+
+[[capabilities]]
+id = "put"
+description = "Upload one WebDAV file from inline bounded content."
+input_schema = "schemas/put-input.schema.json"
+output_schema = "schemas/put-output.schema.json"
+permissions = ["connection.write", "webdav.put"]
+risk = "destructive"
+destructive = true
+streaming = false
+connection_required = true
+required_secret_classes = []
+supports_dry_run = true
+default_timeout_ms = 30000
+
+[[capabilities]]
+id = "delete"
+description = "Delete one WebDAV file or directory."
+input_schema = "schemas/delete-input.schema.json"
+output_schema = "schemas/delete-output.schema.json"
+permissions = ["connection.write", "webdav.delete"]
+risk = "destructive"
+destructive = true
+streaming = false
+connection_required = true
+required_secret_classes = []
+supports_dry_run = true
+default_timeout_ms = 30000
+
+[[capabilities]]
+id = "mkdir"
+description = "Create one WebDAV directory."
+input_schema = "schemas/mkdir-input.schema.json"
+output_schema = "schemas/mkdir-output.schema.json"
+permissions = ["connection.write", "webdav.mkdir"]
+risk = "destructive"
+destructive = true
+streaming = false
+connection_required = true
+required_secret_classes = []
+supports_dry_run = true
+default_timeout_ms = 30000
+
+[[capabilities]]
+id = "copy"
+description = "COPY a WebDAV resource with explicit overwrite, depth, and ETag preconditions."
+input_schema = "schemas/copy-input.schema.json"
+output_schema = "schemas/copy-output.schema.json"
+permissions = ["connection.write", "webdav.copy"]
+risk = "destructive"
+destructive = true
+streaming = false
+connection_required = true
+required_secret_classes = []
+supports_dry_run = true
+default_timeout_ms = 60000
+
+[[capabilities]]
+id = "move"
+description = "MOVE a WebDAV resource with explicit overwrite and ETag preconditions."
+input_schema = "schemas/move-input.schema.json"
+output_schema = "schemas/move-output.schema.json"
+permissions = ["connection.write", "webdav.move"]
+risk = "destructive"
+destructive = true
+streaming = false
+connection_required = true
+required_secret_classes = []
+supports_dry_run = true
+default_timeout_ms = 60000
+
+[[capabilities]]
+id = "sync_plan"
+description = "Compute a local/WebDAV sync plan without applying changes."
+input_schema = "schemas/sync-plan-input.schema.json"
+output_schema = "schemas/sync-plan-output.schema.json"
+permissions = ["connection.read", "webdav.sync_plan", "local.scan"]
+risk = "read_only"
+destructive = false
+streaming = false
+connection_required = true
+required_secret_classes = []
+supports_dry_run = false
+default_timeout_ms = 60000
+
+[ui]
+tui = true
+
+[requirements]
+voidb_core = ">=0.1.0"
+platforms = ["darwin", "linux", "windows"]

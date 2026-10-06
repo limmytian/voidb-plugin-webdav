@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "auth": {
+      "properties": {
+        "password": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "None",
+            "Basic",
+            "Digest"
+          ],
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "timeout": {
+      "default": 30,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "url": {
+      "description": "WebDAV server endpoint URL",
+      "type": "string"
+    },
+    "verify_ssl": {
+      "default": true,
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "url"
+  ],
+  "title": "WebDavConnectionProfile",
+  "type": "object"
+}

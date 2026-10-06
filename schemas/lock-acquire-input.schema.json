@@ -1,0 +1,19 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "path": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "timeout_seconds": {
+      "default": 300,
+      "maximum": 3600,
+      "minimum": 30,
+      "type": "integer"
+    }
+  },
+  "required": [
+    "path"
+  ],
+  "type": "object"
+}

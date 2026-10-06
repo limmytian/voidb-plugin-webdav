@@ -1,0 +1,12 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "path": {
+      "default": "/",
+      "description": "Remote WebDAV directory path. Use InvocationControls.page for offset pagination.",
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
