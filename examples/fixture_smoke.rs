@@ -4,6 +4,8 @@
 //! surface against a disposable local WebDAV fixture using only the generated
 //! scratch collection from the fixture environment.
 
+#![allow(clippy::result_large_err)]
+
 use anyhow::{Context, Result, bail, ensure};
 use base64::{Engine as _, engine::general_purpose::STANDARD as BASE64};
 use chrono::Utc;
