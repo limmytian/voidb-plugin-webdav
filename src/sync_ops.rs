@@ -310,7 +310,7 @@ pub async fn execute_sync_plan(
 
         match &change.action {
             SyncAction::Download => {
-                let remote_path = format!("{}/{}", remote_base, &change.rel_path);
+                let remote_path = format!("{}/{}", remote_base, change.rel_path);
                 let local_path = local_base_path.join(&change.rel_path);
 
                 if change.is_dir {
@@ -330,7 +330,7 @@ pub async fn execute_sync_plan(
             }
 
             SyncAction::Upload => {
-                let remote_path = format!("{}/{}", remote_base, &change.rel_path);
+                let remote_path = format!("{}/{}", remote_base, change.rel_path);
                 let local_path = local_base_path.join(&change.rel_path);
 
                 if change.is_dir {
@@ -355,7 +355,7 @@ pub async fn execute_sync_plan(
             }
 
             SyncAction::DeleteRemote => {
-                let remote_path = format!("{}/{}", remote_base, &change.rel_path);
+                let remote_path = format!("{}/{}", remote_base, change.rel_path);
                 webdav_ops::delete(client, &remote_path).await?;
                 deleted += 1;
             }
