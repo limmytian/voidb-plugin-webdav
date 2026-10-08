@@ -7,6 +7,11 @@ Independent process plugin for [VoidB](https://github.com/limmytian/voidb) to co
 ## Features
 
 - **Autonomous Process Architecture**: Runs in an isolated OS process communicating with VoidB via `stdio-jsonrpc`.
+- **Tri-Modal Operation**:
+  - `test`: Automated connectivity verification.
+  - `tui`: Standalone full-screen interactive terminal interface.
+  - `serve`: `stdio-jsonrpc` protocol server for AI Agents and automated orchestration.
+  - Domain commands: File listing, upload/download, remote folder creation, moving, copying, and sync.
 - **Capability Surface**:
   - `probe`: Probe server DAV classes, allowed methods, range requests, and lock capabilities.
   - `list`: List directory contents with bounded results and offset pagination.
@@ -18,24 +23,53 @@ Independent process plugin for [VoidB](https://github.com/limmytian/voidb) to co
   - `copy`: Copy remote items with explicit overwrite and preconditions.
   - `move`: Move remote items with explicit overwrite and preconditions.
   - `sync_plan`: Generate bidirectional sync plans between local folders and remote WebDAV directories.
-- **Dual Mode**: Can run as a JSON-RPC worker server (`voidb-plugin-webdav serve`) or standalone interactive TUI.
+
+## Usage & Operational Modes
+
+When installed, `voidb-cli` automatically discovers this plugin and provides seamless transparent dispatch:
+
+### 1. Human Operations (CLI & TUI)
+
+```bash
+# Connectivity test
+voidb-cli webdav test --profile my-webdav
+
+# Launch standalone interactive fullscreen TUI
+voidb-cli webdav tui --profile my-webdav
+
+# File and collection operations
+voidb-cli webdav ls /remote/path --profile my-webdav
+voidb-cli webdav info /remote/path/file.txt --profile my-webdav
+voidb-cli webdav put /remote/path/file.txt ./local.txt --profile my-webdav
+voidb-cli webdav get /remote/path/file.txt ./download.txt --profile my-webdav
+voidb-cli webdav mkdir /remote/path/new-folder --profile my-webdav
+```
+
+### 2. Machine Communication (AI Agents & JSON-RPC)
+
+```bash
+# Run the stdio-jsonrpc server directly or via voidb-cli
+voidb-cli webdav serve
+# Or directly run the binary:
+./bin/voidb-plugin-webdav serve
+```
 
 ## Quick Start
 
 ### Installation
 
-Place this plugin directory or a packaged release archive under your VoidB plugins directory:
+Place this plugin directory or a packaged release archive under your VoidB plugins directory (`~/Library/Application Support/voidb/plugins/webdav` on macOS, or `~/.local/share/voidb/plugins/webdav` on Linux):
 
 ```bash
-mkdir -p ~/.config/voidb/plugins/webdav
-cp -r plugin.toml bin schemas ~/.config/voidb/plugins/webdav/
+mkdir -p "$HOME/Library/Application Support/voidb/plugins/webdav"
+cp -r plugin.toml bin schemas "$HOME/Library/Application Support/voidb/plugins/webdav/"
 ```
 
 Verify discovery via `voidb`:
 
 ```bash
 voidb-cli plugin list
-voidb-cli plugin describe webdav
+voidb-cli webdav --help
 ```
 
 ### Development & Build
