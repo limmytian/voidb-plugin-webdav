@@ -1,6 +1,6 @@
 id = "webdav"
 name = "WebDAV Plugin"
-version = "0.3.0"
+version = "0.3.3"
 protocol_version = "1"
 description = "WebDAV remote storage and file management plugin for VoidB."
 license = "Apache-2.0"
