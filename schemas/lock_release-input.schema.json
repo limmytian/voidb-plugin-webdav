@@ -1,0 +1,13 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "lock_ref": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "lock_ref"
+  ],
+  "type": "object"
+}

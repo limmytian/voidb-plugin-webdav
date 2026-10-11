@@ -1,0 +1,16 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "lock_ref": {
+      "type": "string"
+    },
+    "timeout_seconds": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "lock_ref",
+    "timeout_seconds"
+  ],
+  "type": "object"
+}

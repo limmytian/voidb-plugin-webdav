@@ -1,0 +1,12 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "released": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "released"
+  ],
+  "type": "object"
+}
