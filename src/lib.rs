@@ -13,8 +13,8 @@ pub mod webdav_ops;
 
 pub use agent_session::WebDavAgentSessionFactory;
 pub use capabilities::{invoke_webdav_capability, webdav_capabilities};
-pub use config::{WebDavAuth, WebDavConfig};
 pub use cli_plugin::create_webdav_cli_plugin;
+pub use config::{WebDavAuth, WebDavConfig};
 pub use transfer_contract::webdav_transfer_contract;
 
 /// Test a WebDAV connection from a ConnectionConfig
