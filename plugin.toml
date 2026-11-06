@@ -39,7 +39,7 @@ default_timeout_ms = 30000
 declared = true
 interactive_execute = false
 session_purposes = []
-note = "Remote path-prefix constraints are revalidated; resumable sessions remain deferred."
+note = "Remote path-prefix constraints are revalidated; resumable transfers run as bounded sessions."
 capability_wide_allowed = true
 
 [capabilities.authorization.approval_schema]
@@ -75,7 +75,7 @@ default_timeout_ms = 30000
 declared = true
 interactive_execute = false
 session_purposes = []
-note = "Remote path-prefix constraints are revalidated; resumable sessions remain deferred."
+note = "Remote path-prefix constraints are revalidated; resumable transfers run as bounded sessions."
 capability_wide_allowed = true
 
 [capabilities.authorization.approval_schema]
@@ -111,7 +111,7 @@ default_timeout_ms = 30000
 declared = true
 interactive_execute = false
 session_purposes = []
-note = "Remote path-prefix constraints are revalidated; resumable sessions remain deferred."
+note = "Remote path-prefix constraints are revalidated; resumable transfers run as bounded sessions."
 capability_wide_allowed = true
 
 [capabilities.authorization.approval_schema]
@@ -147,7 +147,7 @@ default_timeout_ms = 30000
 declared = true
 interactive_execute = false
 session_purposes = []
-note = "Remote path-prefix constraints are revalidated; resumable sessions remain deferred."
+note = "Remote path-prefix constraints are revalidated; resumable transfers run as bounded sessions."
 capability_wide_allowed = true
 
 [capabilities.authorization.approval_schema]
@@ -183,7 +183,7 @@ default_timeout_ms = 30000
 declared = true
 interactive_execute = false
 session_purposes = []
-note = "Remote path-prefix constraints are revalidated; resumable sessions remain deferred."
+note = "Remote path-prefix constraints are revalidated; resumable transfers run as bounded sessions."
 capability_wide_allowed = true
 
 [capabilities.authorization.approval_schema]
@@ -219,7 +219,7 @@ default_timeout_ms = 30000
 declared = true
 interactive_execute = false
 session_purposes = []
-note = "Remote path-prefix constraints are revalidated; resumable sessions remain deferred."
+note = "Remote path-prefix constraints are revalidated; resumable transfers run as bounded sessions."
 capability_wide_allowed = true
 
 [capabilities.authorization.approval_schema]
@@ -255,7 +255,7 @@ default_timeout_ms = 30000
 declared = true
 interactive_execute = false
 session_purposes = []
-note = "Remote path-prefix constraints are revalidated; resumable sessions remain deferred."
+note = "Remote path-prefix constraints are revalidated; resumable transfers run as bounded sessions."
 capability_wide_allowed = true
 
 [capabilities.authorization.approval_schema]
@@ -412,7 +412,7 @@ default_timeout_ms = 60000
 declared = true
 interactive_execute = false
 session_purposes = []
-note = "Remote path-prefix constraints are revalidated; resumable sessions remain deferred."
+note = "Remote path-prefix constraints are revalidated; resumable transfers run as bounded sessions."
 capability_wide_allowed = false
 
 [capabilities.authorization.approval_schema]

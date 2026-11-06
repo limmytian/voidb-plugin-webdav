@@ -26,30 +26,30 @@ Independent process plugin for [VoidB](https://github.com/limmytian/voidb) to co
 
 ## Usage & Operational Modes
 
-When installed, `voidb-cli` automatically discovers this plugin and provides seamless transparent dispatch:
+When installed, `vb` automatically discovers this plugin and provides seamless transparent dispatch:
 
 ### 1. Human Operations (CLI & TUI)
 
 ```bash
 # Connectivity test
-voidb-cli webdav test --profile my-webdav
+vb webdav test --profile my-webdav
 
 # Launch standalone interactive fullscreen TUI
-voidb-cli webdav tui --profile my-webdav
+vb webdav tui --profile my-webdav
 
 # File and collection operations
-voidb-cli webdav ls /remote/path --profile my-webdav
-voidb-cli webdav info /remote/path/file.txt --profile my-webdav
-voidb-cli webdav put /remote/path/file.txt ./local.txt --profile my-webdav
-voidb-cli webdav get /remote/path/file.txt ./download.txt --profile my-webdav
-voidb-cli webdav mkdir /remote/path/new-folder --profile my-webdav
+vb webdav ls /remote/path --profile my-webdav
+vb webdav info /remote/path/file.txt --profile my-webdav
+vb webdav put /remote/path/file.txt ./local.txt --profile my-webdav
+vb webdav get /remote/path/file.txt ./download.txt --profile my-webdav
+vb webdav mkdir /remote/path/new-folder --profile my-webdav
 ```
 
 ### 2. Machine Communication (AI Agents & JSON-RPC)
 
 ```bash
-# Run the stdio-jsonrpc server directly or via voidb-cli
-voidb-cli webdav serve
+# Run the stdio-jsonrpc server directly or via vb
+vb webdav serve
 # Or directly run the binary:
 ./bin/voidb-plugin-webdav serve
 ```
@@ -68,8 +68,8 @@ cp -r plugin.toml bin schemas "$HOME/Library/Application Support/voidb/plugins/w
 Verify discovery via `voidb`:
 
 ```bash
-voidb-cli plugin list
-voidb-cli webdav --help
+vb plugin list
+vb webdav --help
 ```
 
 ### Development & Build

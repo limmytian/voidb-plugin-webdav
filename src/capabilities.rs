@@ -649,7 +649,7 @@ fn webdav_authorization_metadata(id: &str) -> voidb_core::CapabilityAuthorizatio
         }
         _ => {
             return voidb_core::CapabilityAuthorizationMetadata::declared()
-                .with_note("Lock and resumable transfer sessions remain deferred.");
+                .with_note("Locks and resumable transfers run as bounded sessions per the storage transfer contract.");
         }
     };
     let mut field = voidb_core::CapabilityApprovalField::new(
@@ -690,7 +690,7 @@ fn webdav_authorization_metadata(id: &str) -> voidb_core::CapabilityAuthorizatio
     }
     let metadata = voidb_core::CapabilityAuthorizationMetadata::declared()
         .with_note(
-            "Remote path-prefix constraints are revalidated; resumable sessions remain deferred.",
+            "Remote path-prefix constraints are revalidated; resumable transfers run as bounded sessions.",
         )
         .with_approval_schema(voidb_core::CapabilityApprovalSchema::v1(fields));
     if id == "sync_plan" {
